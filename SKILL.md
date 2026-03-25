@@ -1,9 +1,11 @@
 ---
 name: signal-track
-description: signal-track is a CLI tool for continuous information tracking and topic-based intelligence monitoring. It allows users (or agents) to define topics and continuously track relevant updates across multiple sources, instead of performing one-off searches.
+description: signal-track is an AI-native information tracking system and a CLI tool for continuous, topic-based intelligence monitoring.
 ---
 
 ## What it does
+
+signal-track is not a traditional news reader and not a general recommendation feed. The system is built around long-running topics: users define persistent tracking tasks, and the platform continuously monitors information sources, detects meaningful updates, filters noise, and surfaces high-value signals. In other words, it converts one-time information queries into persistent tracking tasks.
 
 * Track ongoing topics (e.g. "OpenAI releases", "NVIDIA earnings", "China policy changes")
 * Aggregate updates from multiple information sources
@@ -113,5 +115,7 @@ All existing `signal-track` CLI commands are supported through the helper script
 - If not logged in, commands return a clear message prompting `signal-track login --api-key <api_key>`.
 - Missing required flags (for example, `--topic-id`, `--news-id`, `--article-id`, `--query`, or `--scope`) are reported and command help is printed.
 - Invalid pagination values (negative/zero/non-integer) return validation errors before any network call.
+
+## Platform notes
 
 signal-track is powered by YouNews as its underlying engine and can be considered the CLI version of YouNews; it is available exclusively to YouNews members — see younews.cn for more information.
