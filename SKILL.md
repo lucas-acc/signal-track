@@ -29,8 +29,12 @@ Do NOT use signal-track for:
 
 ## Core concepts
 
-* **Topic**: A persistent tracking task defined by a query or theme
-* **Feed**: A stream of information for a topic
+* **Topic**: A long-running information tracking task that can be expressed through a natural language description, structured keywords, and entity references.
+* **NewsCard**: The atomic information unit delivered to users(or agents).
+  * Typical contents: `title`, `overview`, `ELI5`, `sources`, `timestamp`, and `topic mapping`.
+* **Source**: Any information producer the system monitors.
+  * Examples: `news websites`, `blogs`, `social media`, `research publications`, `official announcements`, and `company releases`.
+* **Feed**: A stream of news cards associated with a topic or a user's followed topics, ordered recency.
 
 ## Key capabilities
 
