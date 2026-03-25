@@ -6,10 +6,9 @@ const PRIMARY_API_BASE = 'http://younews.k.sohu.com/';
 
 const OPENCLAW_CONFIG_DIR = path.join(os.homedir(), '.openclaw');
 const OPENCLAW_CONFIG_PATH = path.join(OPENCLAW_CONFIG_DIR, 'openclaw.json');
-const LEGACY_CONFIG_DIR = path.join(os.homedir(), '.younews');
+const LEGACY_CONFIG_DIR = path.join(os.homedir(), '.signal-track');
 const LEGACY_CONFIG_PATH = path.join(LEGACY_CONFIG_DIR, 'config.json');
-const SKILL_NAME = 'younews';
-const SKILL_API_ENV = 'YOUNEWS_API_KEY';
+const SKILL_NAME = 'signal-track';
 
 
 function parseArgs(argv) {
@@ -156,12 +155,7 @@ function getSkillConfig(config) {
 }
 
 function getStoredApiKey(config) {
-  return (
-    config?.apiKey
-    || getSkillConfig(config)?.apiKey
-    || getSkillConfig(config)?.env?.[SKILL_API_ENV]
-    || process.env[SKILL_API_ENV]
-  );
+  return config?.apiKey || getSkillConfig(config)?.apiKey;
 }
 
 function getAuthConfig(config) {
@@ -187,16 +181,12 @@ async function persistLoginConfig(apiKey) {
         ...openclawBase,
         skills: {
           ...rawConfig.skills,
-          entries: {
+        entries: {
             ...rawConfig?.skills?.entries,
             [SKILL_NAME]: {
               ...skillConfig,
               enabled: true,
               apiKey,
-              env: {
-                ...(typeof skillConfig.env === 'object' && skillConfig.env ? skillConfig.env : {}),
-                [SKILL_API_ENV]: apiKey,
-              },
             },
           },
         },
@@ -213,7 +203,7 @@ async function persistLoginConfig(apiKey) {
 }
 
 function getApiUrls() {
-  const envBase = process.env.YOUNEWS_API_BASE_URL;
+  const envBase = process.env.SIGNAL_TRACK_API_BASE_URL;
   const urls = [];
   if (envBase) {
     urls.push(envBase.endsWith('/') ? envBase : `${envBase}/`);
