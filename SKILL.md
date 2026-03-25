@@ -92,14 +92,6 @@ All existing `signal-track` CLI commands are supported through the helper script
 
 - `signal-track articles content --article-id <article_id>`
 
-### Global behavior
-
-- Add `--json` for machine-readable output.
-- `--scope` must be `my` or `square`.
-- For commands requiring authentication, login context is read from:
-  - `~/.openclaw/openclaw.json`
-  - then `~/.younews/config.json`.
-- Authorization header is sent as `Authorization: Bearer <api_key>`.
 
 ## Execution notes
 
