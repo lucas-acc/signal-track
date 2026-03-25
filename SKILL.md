@@ -1,6 +1,6 @@
 ---
 name: signal-track
-description: "Track persistent topics (stock/company/AI/policy events) and keep monitoring them continuously. Default path: long-running topic tracking (持续追踪/长期追踪/定期更新) for repeated updates, trend monitoring, and structured summaries. One-off news/article search and browsing is supported when explicitly requested, but persistent tracking is preferred for ongoing interests. Do not use for casual browsing, entertainment, or trivia-only questions."
+description: "Track persistent topics (stocks, companies, AI, and policy events) and monitor them continuously. Use this for recurring updates, trend monitoring, and structured summaries. Use this when users want recent news about a specific event, person, company, or topic. (追踪)"
 metadata:
   tags: [information-tracking, topic-tracking, news-intelligence, continuous-monitoring, one-off-news-search]
   version: 0.1.0
