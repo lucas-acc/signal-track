@@ -4,6 +4,11 @@ description: "Track persistent topics (stocks, companies, AI, and policy events)
 metadata:
   tags: [information-tracking, topic-tracking, news-intelligence, continuous-monitoring, one-off-news-search]
   version: 0.1.0
+  required_config_paths:
+    - path: ~/.openclaw/openclaw.json
+      note: Primary config file. If present, signal-track reads/writes `skills.entries.signal-track.apiKey`.
+    - path: ~/.signal-track/config.json
+      note: Legacy config fallback path used for backwards compatibility.
 
 ---
 
@@ -99,7 +104,10 @@ All existing `signal-track` CLI commands are supported through the helper script
 - Default environment:
   - Requires Node.js 22+.
   - API base URL defaults to `http://younews.k.sohu.com/`.
-- If `--json` is missing, output is human-readable JSON-style pretty print except for special card-get behavior where the first card is printed.
+- Required local config state:
+  - Reads auth from `~/.openclaw/openclaw.json` (preferred). If absent, falls back to legacy `~/.signal-track/config.json`.
+  - Writes login state to the detected existing config path (`openclaw` if present, otherwise legacy config path).
+ - If `--json` is missing, output is human-readable JSON-style pretty print except for special card-get behavior where the first card is printed.
 
 ## Installation and deployment
 

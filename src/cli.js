@@ -203,13 +203,7 @@ async function persistLoginConfig(apiKey) {
 }
 
 function getApiUrls() {
-  const envBase = process.env.SIGNAL_TRACK_API_BASE_URL;
-  const urls = [];
-  if (envBase) {
-    urls.push(envBase.endsWith('/') ? envBase : `${envBase}/`);
-  }
-  urls.push(PRIMARY_API_BASE);
-  return [...new Set(urls)];
+  return [PRIMARY_API_BASE];
 }
 
 function addQueryParams(url, params) {
