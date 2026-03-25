@@ -103,7 +103,7 @@ All existing `signal-track` CLI commands are supported through the helper script
 - Always keep commands in English.
 - Default environment:
   - Requires Node.js 22+.
-  - API base URL defaults to `http://younews.k.sohu.com/`.
+- API base URL defaults to `https://younews.k.sohu.com/`.
 - Required local config state:
   - Reads auth from `~/.openclaw/openclaw.json` (preferred). If absent, falls back to legacy `~/.signal-track/config.json`.
   - Writes login state to the detected existing config path (`openclaw` if present, otherwise legacy config path).

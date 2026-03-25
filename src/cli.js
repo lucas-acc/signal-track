@@ -2,7 +2,7 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 const os = require('node:os');
 
-const PRIMARY_API_BASE = 'http://younews.k.sohu.com/';
+const PRIMARY_API_BASE = 'https://younews.k.sohu.com/';
 
 const OPENCLAW_CONFIG_DIR = path.join(os.homedir(), '.openclaw');
 const OPENCLAW_CONFIG_PATH = path.join(OPENCLAW_CONFIG_DIR, 'openclaw.json');
